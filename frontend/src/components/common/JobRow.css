@@ -1,0 +1,415 @@
+@import '../../styles/variables.css';
+
+.job-row {
+  border-bottom: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+}
+
+.job-row:hover {
+  background: #f8fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.job-row.expanded {
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-row td {
+  padding: 1.25rem;
+  vertical-align: top;
+  border-bottom: none;
+}
+
+/* Job Title Cell */
+.job-title-cell {
+  font-weight: 500;
+}
+
+.job-title-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.job-company {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.company-name {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.relevance-score {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.relevance-high {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.relevance-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.relevance-low {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Job Details Cell */
+.job-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.location-icon {
+  font-size: 0.8rem;
+}
+
+.job-type-container {
+  display: flex;
+  align-items: center;
+}
+
+.job-type-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.job-type-fulltime {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.job-type-parttime {
+  background: #ddd6fe;
+  color: #5b21b6;
+}
+
+.job-type-contract {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.job-type-internship {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.job-type-freelance {
+  background: #fcf4ff;
+  color: #86198f;
+}
+
+.job-type-temporary {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.job-type-permanent {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.job-type-default {
+  background: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Job Source Cell */
+.job-source-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-source,
+.job-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.source-icon,
+.date-icon {
+  font-size: 0.8rem;
+}
+
+/* Job Salary Cell */
+.job-salary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Job Actions Cell */
+.job-actions-cell {
+  text-align: center;
+}
+
+.apply-button {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--sidebar-accent) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.apply-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(64, 22, 100, 0.3);
+}
+
+/* Expanded Row */
+.job-expanded-row {
+  background: var(--background-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.job-expanded-row td {
+  padding: 0;
+}
+
+.job-expanded-content {
+  padding: 1.5rem;
+  background: var(--background-color);
+  border-left: 4px solid var(--primary-color);
+}
+
+.job-description {
+  margin-bottom: 1.5rem;
+}
+
+.job-description h4 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.job-description p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.job-meta {
+  margin-bottom: 1.5rem;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.meta-value {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.meta-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.meta-link:hover {
+  text-decoration: underline;
+}
+
+.expanded-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.apply-button-large {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.apply-button-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.collapse-button {
+  background: var(--surface-color);
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.collapse-button:hover {
+  background: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-row td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .job-title {
+    font-size: 0.9rem;
+  }
+
+  .company-name {
+    font-size: 0.8rem;
+  }
+
+  .job-location,
+  .job-source,
+  .job-date,
+  .job-salary {
+    font-size: 0.8rem;
+  }
+
+  .apply-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .job-expanded-content {
+    padding: 1rem;
+  }
+
+  .meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .expanded-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .apply-button-large,
+  .collapse-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-row td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .job-title {
+    font-size: 0.85rem;
+  }
+
+  .company-name {
+    font-size: 0.75rem;
+  }
+
+  .job-location,
+  .job-source,
+  .job-date,
+  .job-salary {
+    font-size: 0.75rem;
+  }
+
+  .apply-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .job-company {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .relevance-score {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .job-type-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+}

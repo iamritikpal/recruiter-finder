@@ -1,0 +1,219 @@
+/* Import design system */
+@import '../../styles/variables.css';
+
+/* Error Message Component Styles */
+
+.error-container {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--white);
+  border: 2px solid var(--accent-red);
+  border-radius: var(--radius-xl);
+  margin-bottom: 2rem;
+}
+
+.error-container h3 {
+  color: var(--accent-red);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.error-container p {
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.retry-btn {
+  background: var(--accent-red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.retry-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
+}
+
+/* Error message variants */
+.error-message {
+  color: var(--accent-red);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+}
+
+.error-message.inline {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+
+.error-message .error-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Warning variant */
+.warning-container {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.warning-container h3 {
+  color: #f59e0b;
+}
+
+.warning-container .retry-btn {
+  background: #f59e0b;
+}
+
+.warning-container .retry-btn:hover {
+  background: #d97706;
+}
+
+/* Info variant */
+.info-container {
+  background: var(--primary-light);
+  border-color: var(--primary-blue);
+  color: var(--primary-dark);
+}
+
+.info-container h3 {
+  color: var(--primary-blue);
+}
+
+.info-container .retry-btn {
+  background: var(--primary-blue);
+}
+
+.info-container .retry-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Success variant */
+.success-container {
+  background: #f0f9f4;
+  border-color: var(--accent-green);
+  color: #166534;
+}
+
+.success-container h3 {
+  color: var(--accent-green);
+}
+
+.success-container .retry-btn {
+  background: var(--accent-green);
+}
+
+.success-container .retry-btn:hover {
+  background: #059669;
+}
+
+/* Compact variant */
+.error-container.compact {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.error-container.compact h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  justify-content: flex-start;
+}
+
+.error-container.compact p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.error-container.compact .retry-btn {
+  padding: 0.625rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Network error specific styling */
+.network-error {
+  border-color: var(--gray-400);
+  background: var(--gray-50);
+}
+
+.network-error h3 {
+  color: var(--gray-700);
+}
+
+.network-error .retry-btn {
+  background: var(--gray-600);
+}
+
+.network-error .retry-btn:hover {
+  background: var(--gray-700);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-container {
+    padding: 2rem 1rem;
+  }
+  
+  .error-container h3 {
+    font-size: 1.3rem;
+  }
+  
+  .retry-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .error-container h3 {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .retry-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .error-message {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.25rem;
+  }
+}

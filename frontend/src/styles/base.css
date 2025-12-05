@@ -1,0 +1,90 @@
+/* Base Styles and Reset */
+
+/* Modern CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Base Styles */
+body {
+  background: var(--gray-25);
+  min-height: 100vh;
+  font-family: var(--font-family-primary);
+  color: var(--gray-800);
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Main App Container */
+.App {
+  display: flex;
+  min-height: 100vh;
+  background: var(--gray-25);
+  position: relative;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--primary-purple);
+  outline-offset: 2px;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-purple);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --gray-100: #e0e0e0;
+    --gray-200: #d0d0d0;
+    --gray-300: #c0c0c0;
+    --gray-400: #909090;
+    --gray-500: #606060;
+    --gray-600: #404040;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .sidebar,
+  .mobile-menu-button,
+  .mobile-overlay {
+    display: none !important;
+  }
+  
+  .main-wrapper {
+    margin-left: 0 !important;
+  }
+  
+  .main-content {
+    padding: 0;
+    max-width: none;
+  }
+}

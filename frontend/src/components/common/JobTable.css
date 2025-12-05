@@ -1,0 +1,190 @@
+@import '../../styles/variables.css';
+
+.job-table-container {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.job-table-wrapper {
+  overflow-x: auto;
+}
+
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.job-table-header {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--sidebar-accent) 100%);
+  color: white;
+}
+
+.job-table-header th {
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.job-title-column {
+  width: 35%;
+  min-width: 250px;
+}
+
+.job-details-column {
+  width: 20%;
+  min-width: 150px;
+}
+
+.job-source-column {
+  width: 20%;
+  min-width: 140px;
+}
+
+.job-salary-column {
+  width: 15%;
+  min-width: 120px;
+}
+
+.job-actions-column {
+  width: 10%;
+  min-width: 100px;
+  text-align: center;
+}
+
+.job-table-footer {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.table-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.job-count {
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.table-note {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .job-title-column {
+    width: 40%;
+    min-width: 200px;
+  }
+  
+  .job-details-column {
+    width: 25%;
+    min-width: 120px;
+  }
+  
+  .job-source-column {
+    width: 20%;
+    min-width: 110px;
+  }
+  
+  .job-salary-column {
+    width: 15%;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .job-table-container {
+    border-radius: 8px;
+  }
+  
+  .job-table {
+    font-size: 0.8rem;
+  }
+  
+  .job-table-header th {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .job-title-column {
+    min-width: 180px;
+  }
+  
+  .job-details-column {
+    min-width: 100px;
+  }
+  
+  .job-source-column {
+    min-width: 90px;
+  }
+  
+  .job-salary-column {
+    min-width: 80px;
+  }
+  
+  .job-actions-column {
+    min-width: 80px;
+  }
+  
+  .table-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .table-note {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-table-header th {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .job-table {
+    font-size: 0.75rem;
+  }
+  
+  .job-title-column {
+    min-width: 150px;
+  }
+  
+  .job-details-column {
+    min-width: 80px;
+  }
+  
+  .job-source-column {
+    min-width: 70px;
+  }
+  
+  .job-salary-column {
+    min-width: 60px;
+  }
+  
+  .job-actions-column {
+    min-width: 60px;
+  }
+}

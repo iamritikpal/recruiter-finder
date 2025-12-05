@@ -1,0 +1,369 @@
+/* Import design system */
+@import '../../styles/variables.css';
+
+/* Company Card Component Styles */
+
+.company-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 480px; /* Further increased to accommodate all content */
+}
+
+.company-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(64, 22, 100, 0.12);
+  border-color: var(--primary-purple);
+}
+
+/* Company Header */
+.company-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.company-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--gray-200);
+}
+
+.company-logo-fallback {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--primary-purple);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.company-basic-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 0.25rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.company-category {
+  font-size: 0.8rem;
+  color: var(--primary-purple);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.company-financial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.market-cap,
+.stock-symbol {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.market-cap {
+  background: var(--accent-green);
+  color: var(--white);
+}
+
+.stock-symbol {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+/* Company Description */
+.company-description {
+  margin-bottom: 1rem;
+  flex-grow: 0; /* Don't allow to grow and take space from other elements */
+  flex-shrink: 1; /* Allow to shrink if needed */
+}
+
+.company-description p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.4; /* Slightly tighter line height */
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Reduced from 3 to 2 lines */
+  line-clamp: 2; /* Standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 2.8rem; /* Fixed maximum height */
+}
+
+/* Company Tags */
+.company-tags {
+  margin-bottom: 1rem;
+  flex-shrink: 0; /* Don't shrink this section */
+}
+
+.tags-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tags-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.company-tag {
+  background: var(--primary-purple-bg);
+  color: var(--primary-purple);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.company-tag.more-tags {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+/* Company Locations */
+.company-locations {
+  margin-bottom: 2rem; /* Increased margin for better separation */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.locations-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.locations-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.locations-count {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.locations-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 2.5rem; /* Ensure minimum space for locations */
+  align-items: flex-start;
+}
+
+.location-chip {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.location-chip:hover {
+  background: var(--primary-purple);
+  color: var(--white);
+  border-color: var(--primary-purple);
+}
+
+.location-chip.more-locations {
+  background: var(--gray-50);
+  color: var(--gray-500);
+  cursor: default;
+}
+
+.location-chip.more-locations:hover {
+  background: var(--gray-50);
+  color: var(--gray-500);
+  border-color: var(--gray-300);
+}
+
+/* Company Actions - ALWAYS in one row */
+.company-actions {
+  margin-top: auto; /* Push to bottom */
+  display: flex;
+  flex-direction: row !important; /* Force row direction always */
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-100); /* Added separator line */
+  flex-shrink: 0; /* Never shrink the actions area */
+  min-height: 3rem; /* Ensure consistent height */
+}
+
+.find-recruiters-btn {
+  background: var(--primary-purple);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0.875rem 0.5rem; /* Reduced horizontal padding */
+  font-size: 0.85rem; /* Slightly smaller font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  flex: 1; /* Take equal space */
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem; /* Reduced gap */
+  white-space: nowrap; /* Prevent text wrapping */
+  min-width: 0; /* Allow flex shrinking if needed */
+}
+
+.find-recruiters-btn:hover {
+  background: var(--primary-purple-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.find-jobs-btn {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0.875rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.find-jobs-btn:hover {
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.company-website-btn {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: 0.875rem 0.5rem; /* Reduced horizontal padding */
+  font-size: 0.85rem; /* Slightly smaller font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  flex: 1; /* Take equal space */
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem; /* Reduced gap */
+  white-space: nowrap; /* Prevent text wrapping */
+  min-width: 0; /* Allow flex shrinking if needed */
+}
+
+.company-website-btn:hover {
+  background: var(--gray-700);
+  color: var(--white);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-card {
+    padding: 1rem;
+    min-height: 450px; /* Increased for mobile */
+  }
+  
+  .company-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .company-financial {
+    align-items: center;
+  }
+  
+  /* KEEP buttons in row even on mobile */
+  .company-actions {
+    flex-direction: row !important; /* Force row even on mobile */
+    gap: 0.5rem;
+  }
+  
+  .find-recruiters-btn,
+  .find-jobs-btn,
+  .company-website-btn {
+    font-size: 0.8rem;
+    padding: 0.75rem 0.25rem; /* Even smaller padding on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .company-card {
+    padding: 0.875rem;
+    min-height: 420px; /* Increased for small mobile */
+  }
+  
+  .company-actions {
+    gap: 0.25rem; /* Smaller gap on very small screens */
+  }
+  
+  .find-recruiters-btn,
+  .find-jobs-btn,
+  .company-website-btn {
+    font-size: 0.75rem;
+    padding: 0.625rem 0.125rem; /* Minimal padding */
+  }
+}

@@ -1,0 +1,102 @@
+/* Import design system */
+@import '../../styles/variables.css';
+
+/* Layout specific styles */
+.App {
+  display: flex;
+  min-height: 100vh;
+  background: var(--gray-25);
+  position: relative;
+}
+
+/* Main Content Area */
+.main-wrapper {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  background: var(--gray-25);
+  transition: margin-left var(--transition-normal);
+  overflow-x: hidden;
+}
+
+/* Content inside main wrapper */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+.content-header h1 {
+  color: var(--primary-purple);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.content-header p {
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-wrapper {
+    margin-left: 260px;
+  }
+  
+  .content-header h1 {
+    font-size: 2rem;
+  }
+  
+  .main-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    margin-left: 0;
+    padding-top: 4rem; /* Space for mobile header */
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .content-header {
+    padding: 1rem 0 2rem 0;
+    margin-bottom: 2rem;
+  }
+  
+  .content-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .content-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+  
+  .content-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .content-header p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,258 @@
+/* Import design system */
+@import '../../styles/variables.css';
+
+/* Resume Analysis Page Styles */
+
+/* Resume Upload Section */
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.resume-upload-section {
+  margin-bottom: 2rem;
+}
+
+.upload-area {
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--white);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+  border-color: var(--primary-purple);
+  background: var(--primary-purple-bg);
+}
+
+.upload-area.has-file {
+  border-color: var(--accent-green);
+  background: #f0f9f4;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: var(--primary-purple);
+}
+
+.upload-text h3 {
+  font-size: 1.25rem;
+  color: var(--gray-800);
+  margin-bottom: 0.5rem;
+}
+
+.upload-text p {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Resume Analysis Results */
+.resume-analysis-results {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.analysis-header {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.analysis-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.analysis-content {
+  padding: 2rem;
+}
+
+.analysis-section {
+  margin-bottom: 2rem;
+}
+
+.analysis-section:last-child {
+  margin-bottom: 0;
+}
+
+.analysis-section h3 {
+  color: var(--primary-purple);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: var(--primary-purple-bg);
+  color: var(--primary-purple);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.experience-badge {
+  background: var(--accent-green);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary-text {
+  background: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-purple);
+  line-height: 1.6;
+  color: var(--gray-700);
+}
+
+/* Recommended Recruiters Section */
+.recommended-recruiters {
+  margin-top: 3rem;
+}
+
+.recommended-recruiters h2 {
+  color: var(--primary-purple);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.recommended-recruiters p {
+  text-align: center;
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+}
+
+.recruiters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.recommended-recruiter {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.recommended-recruiter:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.match-reason {
+  padding: 1rem;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.match-score {
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.match-badge {
+  background: var(--accent-green);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .upload-area {
+    padding: 2rem 1rem;
+  }
+  
+  .upload-text h3 {
+    font-size: 1.1rem;
+  }
+  
+  .analysis-header {
+    padding: 1.5rem;
+  }
+  
+  .analysis-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .analysis-content {
+    padding: 1.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .recruiters-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-area {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .analysis-header {
+    padding: 1rem;
+  }
+  
+  .analysis-content {
+    padding: 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
