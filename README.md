@@ -2,6 +2,14 @@
 
 A full-stack web application that helps you find LinkedIn recruiter profiles using two powerful methods: search by company name or get AI-powered recommendations based on your resume analysis.
 
+
+# Demo Credential
+
+```bash
+Email=demoemail98@gmail.com
+Password=Demo@1234  
+```
+
 ## ✨ Features
 
 ### 🏢 **Company Search**
